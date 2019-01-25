@@ -10,7 +10,7 @@
         "lint": "tslint -c tslint.json src/*.ts",
         "prestart": "yarn build",
         "start": "node dist/index.js",
-        "test": "mocha -r ts-node/register src/*.test.ts"
+        "test": "mocha -r ts-node/register src/**/*.test.ts"
     },
     "license": "MIT",
     "devDependencies": {
