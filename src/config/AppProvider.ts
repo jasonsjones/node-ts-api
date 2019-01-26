@@ -15,4 +15,4 @@ class AppProvider {
     }
 }
 
-export default AppProvider.getInstance();
+export default AppProvider;
