@@ -6,7 +6,7 @@
         "prebuild": "yarn clean",
         "build": "tsc",
         "clean": "rm -rf dist",
-        "dev": "DEBUG=app nodemon --exec ts-node src/index.ts",
+        "dev": "DEBUG=app ts-node-dev src/index.ts",
         "lint": "tslint -c tslint.json src/*.ts",
         "prestart": "yarn build",
         "start": "node dist/index.js",
@@ -21,8 +21,8 @@
         "chai": "^4.2.0",
         "debug": "^4.1.1",
         "mocha": "^5.2.0",
-        "nodemon": "^1.18.9",
         "ts-node": "^8.0.1",
+        "ts-node-dev": "^1.0.0-pre.32",
         "tslint": "^5.12.1",
         "tslint-config-prettier": "^1.17.0",
         "typescript": "^3.2.4"
