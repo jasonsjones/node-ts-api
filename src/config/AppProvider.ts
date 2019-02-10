@@ -4,17 +4,16 @@ import MiddlewareConfig from './MiddlewareConfig';
 import RouterConfig from './RouterConfig';
 
 class AppProvider {
-    public static getInstance(): Application {
-        this.configureApp();
-        return AppProvider.app;
-    }
+    public static getInstance = (): Promise<Application> =>
+        AppProvider.configureApp().then(() => AppProvider.app);
 
     private static app: Application = Express();
 
-    private static configureApp(): void {
-        MiddlewareConfig.configMiddleware(this.app);
-        RouterConfig.configRoutes(this.app);
-    }
+    private static configureApp = (): Promise<void> =>
+        Promise.resolve().then(() => {
+            MiddlewareConfig.configMiddleware(AppProvider.app);
+            RouterConfig.configRoutes(AppProvider.app);
+        });
 }
 
 export default AppProvider;
